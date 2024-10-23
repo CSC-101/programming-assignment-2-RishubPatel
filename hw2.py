@@ -57,7 +57,13 @@ def running_time(songs: list[data.Song], nums: list[int]) -> data.Duration: #ret
 
 # Part 5
 
-def validate_route(): #graph theory! kind of
-    pass
+def validate_route(city_links: list[list[str]], route: list[str]) -> bool: #tests whether a given route is valid given a list of city links (ie. there are links from each city to the next in the route)
+    if city_links == []:
+        return False
+    for i in range(len(route) - 1): # -1 b/c last city doesn't need a link to a next city
+        if not([route[i], route[i + 1]] in city_links or [route[i + 1], route[i]] in city_links): #this is fine b/c 2 cities in each link -- don't need to make a permutations thing
+            return False
+    return True
+    #False if there isn't a direct link (i.e. you need to travel through another city)
 
 # Part 6

@@ -104,6 +104,46 @@ class TestCases(unittest.TestCase):
 
     # Part 5
 
+    def test_validate_route_1(self):
+        city_links = [['san luis obispo', 'santa margarita'],
+        ['san luis obispo', 'pismo beach'],
+        ['atascadero', 'santa margarita'],
+        ['atascadero', 'creston']]
+        route = ['san luis obispo', 'santa margarita', 'atascadero']
+        result = hw2.validate_route(city_links, route)
+        expected = True
+        self.assertEqual(expected, result)
+
+    def test_validate_route_2(self):
+        city_links = [['san luis obispo', 'santa margarita'],
+        ['san luis obispo', 'pismo beach'],
+        ['atascadero', 'santa margarita'],
+        ['atascadero', 'creston']]
+        route = ['san luis obispo', 'atascadero']
+        result = hw2.validate_route(city_links, route)
+        expected = False
+        self.assertEqual(expected, result)
+    
+    def test_validate_route_3(self):
+        city_links = [['san luis obispo', 'santa margarita'],
+        ['san luis obispo', 'pismo beach'],
+        ['atascadero', 'santa margarita'],
+        ['atascadero', 'creston']]
+        route = []
+        result = hw2.validate_route(city_links, route)
+        expected = True
+        self.assertEqual(expected, result)
+
+    def test_validate_route_4(self):
+        city_links = [['san luis obispo', 'santa margarita'],
+        ['san luis obispo', 'pismo beach'],
+        ['atascadero', 'santa margarita'],
+        ['atascadero', 'creston']]
+        route = ['creston']
+        result = hw2.validate_route(city_links, route)
+        expected = True
+        self.assertEqual(expected, result)
+
 
     # Part 6
 
