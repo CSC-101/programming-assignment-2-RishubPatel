@@ -147,9 +147,17 @@ class TestCases(unittest.TestCase):
 
     # Part 6
 
+    def test_longest_repetition_1(self):
+        lst = [1, 1, 2, 2, 1, 1, 1, 3]
+        result = hw2.longest_repetition(lst)
+        expected = 4
+        self.assertEqual(expected, result)
 
-
-
+    def test_longest_repetition_2(self):
+        lst = [0]
+        result = hw2.longest_repetition(lst)
+        expected = 0
+        self.assertEqual(expected, result)
 
 if __name__ == '__main__':
     unittest.main()
